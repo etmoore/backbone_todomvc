@@ -11,7 +11,7 @@ app.AppView = Backbone.View.extend({
   // Delegated events for creating new items, and clearing completed ones.
   events: {
     'keypress #new-todo': 'createOnEnter',
-    'click #clear-completed': 'clearCompleted'
+    'click #clear-completed': 'clearCompleted',
     'click #toggle-all': 'toggleAllComplete'
   },
 
@@ -75,7 +75,7 @@ app.AppView = Backbone.View.extend({
 
   filterOne: function(todo) {
     todo.trigger('visible');
-  }
+  },
 
   filterAll: function() {
     app.Todos.each(this.filterOne, this);
